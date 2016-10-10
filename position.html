@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <style></style>
+    <script>
+        if(navigator.geolocation){
+            //获取一次地理位置
+            navigator.geolocation.getCurrentPosition(function(ev){
+                var msg=ev.coords;
+                for(var name in msg){
+                    document.write(name+':'+msg[name]+'<br>');
+                }
+            },function(ev){
+                alert('失败')
+            })
+        }else{
+            alert('成功')
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>
